@@ -1,5 +1,5 @@
 ## Prisma_tensorflow
-__Clean__ and __Clear__
+ - __Clean__ and __Clear__
 
 ## Requirements
  - _numpy.&#8194;&#8194;Image.&#8194;&#8194;tensorflow._
