@@ -1,9 +1,7 @@
 ## Prisma_tensorflow
- - __Clean__ and __Clear__
-
-## Requirements
- - _numpy.&#8194;&#8194;Image.&#8194;&#8194;tensorflow._
- - _content.jpg.&#8194;&#8194;style.jpg.&#8194;&#8194;vgg16.npy._
+ - __Minimalism__
+ - __Clean Code__
+ - __Clear Structure__
 
 ## Results
 <img src="examples/content.jpg" width="200px" height="200px" /> &#8194; <img src="examples/style.jpg" width="200px" height="200px" /> &#8194; <img src="examples/pic100.jpg" width="200px" height="200px" />
