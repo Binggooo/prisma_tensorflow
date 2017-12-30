@@ -11,19 +11,19 @@ LEARNING_RATE = 2.0
 ITERATIONS = 101
 FREQUENCY_SAVE = 10
 
-# load image
-contentImage = np.array(Image.open('content.jpg')).reshape((1, 224, 224, 3))
-styleImage = np.array(Image.open('style.jpg')).reshape((1, 224, 224, 3))
-generation = cost.randomInitiation(contentImage)
-print('image is loaded...')
-
 # build vggNet
 vgg = vgg16.Vgg16('./vgg16.npy')
 print('vggNet is built...')
 
+# load image
+contentImage = np.array(Image.open('./examples/content.jpg')).reshape((1, vgg.HEIGHT, vgg.WIDTH, vgg.CHANNELS))
+styleImage = np.array(Image.open('./examples/style.jpg')).reshape((1, vgg.HEIGHT, vgg.WIDTH, vgg.CHANNELS))
+generation = cost.randomInitiation(contentImage)
+print('image is loaded...')
+
 with tf.Session() as sess:
     # feature maps
-    tf.global_variables_initializer()
+    sess.run(tf.global_variables_initializer())
     sess.run(vgg.inputRGB.assign(contentImage))
     content = sess.run(vgg.contentRGB)
     sess.run(vgg.inputRGB.assign(styleImage))
@@ -45,4 +45,4 @@ with tf.Session() as sess:
         if i % FREQUENCY_SAVE == 0:
             outputRGB = sess.run(vgg.outputRGB)[0]
             outputImage = Image.fromarray(np.clip(outputRGB, 0, 255).astype('uint8'))
-            outputImage.save('pic%d.jpg' % i, mode='RGB')
+            outputImage.save('./examples/pic%d.jpg' % i, mode='RGB')

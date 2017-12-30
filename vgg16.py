@@ -14,7 +14,7 @@ class Vgg16:
 
     def __init__(self, model_path):
         self.model = np.load(model_path, encoding='latin1').item()
-        self.inputRGB = tf.Variable(np.zeros((1, 224, 224, 3)), dtype='float32', trainable=True)
+        self.inputRGB = tf.Variable(np.zeros((1, self.WIDTH, self.HEIGHT, self.CHANNELS)), dtype='float32', trainable=True)
 
         # Size: 224x224x3
         red, green, blue = tf.split(self.inputRGB, 3, 3)
