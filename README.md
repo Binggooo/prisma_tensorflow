@@ -16,3 +16,4 @@
  - [https://github.com/leihe001/tensorflow-vgg](https://github.com/leihe001/tensorflow-vgg)
  - [https://github.com/log0/neural-style-painting](https://github.com/log0/neural-style-painting)
  - [https://github.com/ckmarkoh/neuralart_tensorflow](https://github.com/ckmarkoh/neuralart_tensorflow)
+ - [https://github.com/hzy46/fast-neural-style-tensorflow](https://github.com/hzy46/fast-neural-style-tensorflow)
